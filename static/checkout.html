@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — SethStore</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="checkout-page">
+    <a href="/cart" class="back-link">← Back to cart</a>
+    <h1 class="checkout-title">Checkout</h1>
+
+    <p id="checkout-error" class="error" hidden></p>
+    <p id="checkout-loading" class="muted">Loading…</p>
+
+    <div id="checkout-blocked" class="cart-warning" hidden></div>
+
+    <div id="checkout-body" hidden>
+      <section class="card">
+        <h2>Order summary</h2>
+        <ul id="checkout-items" class="checkout-items"></ul>
+        <div class="checkout-subtotal">
+          <span>Subtotal</span>
+          <strong id="checkout-subtotal">₦0.00</strong>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Shipping address</h2>
+        <div id="checkout-address" class="checkout-address"></div>
+        <a href="/me" class="checkout-edit-link">Edit address →</a>
+      </section>
+
+      <section class="card">
+        <h2>Payment method</h2>
+        <div class="pay-options">
+          <label class="pay-option">
+            <input type="radio" name="payment_method" value="bank_transfer" checked>
+            <div class="pay-option-body">
+              <strong>Bank transfer</strong>
+              <span class="muted small">We'll email you the bank details. Send the transfer, then mark it as paid.</span>
+            </div>
+          </label>
+          <label class="pay-option" id="pod-option">
+            <input type="radio" name="payment_method" value="pay_on_delivery">
+            <div class="pay-option-body">
+              <strong>Pay on delivery</strong>
+              <span class="muted small" id="pod-reason">Have cash ready when your order arrives.</span>
+            </div>
+          </label>
+        </div>
+      </section>
+
+      <section class="card checkout-actions-card">
+        <button id="place-order" class="btn-primary checkout-place-btn">
+          Place order
+        </button>
+        <p id="place-error" class="error small" hidden></p>
+      </section>
+    </div>
+  </main>
+
+  <script src="/static/auth.js"></script>
+  <script src="/static/header.js"></script>
+  <script src="/static/checkout.js"></script>
+</body>
+</html>

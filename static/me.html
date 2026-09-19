@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account — SethStore</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="account">
+    <h1 class="account-title">Account settings</h1>
+
+    <p id="account-error" class="error" hidden></p>
+    <p id="account-loading" class="muted">Loading…</p>
+
+    <div id="account-body" hidden>
+
+      <!-- ── Profile (read-only for now) ── -->
+      <section class="card">
+        <h2>Profile</h2>
+        <div class="field-grid">
+          <label class="field">
+            <span class="field-label">Full name</span>
+            <input type="text" id="full_name" disabled>
+          </label>
+          <label class="field">
+            <span class="field-label">Email</span>
+            <input type="email" id="email" disabled>
+          </label>
+        </div>
+      </section>
+
+      <!-- ── Shipping address ── -->
+      <section class="card">
+        <h2>Shipping address</h2>
+        <form id="address-form">
+          <div class="field-grid">
+            <label class="field">
+              <span class="field-label">Country</span>
+              <input type="text" name="country" autocomplete="country-name" required>
+            </label>
+            <label class="field">
+              <span class="field-label">State</span>
+              <input type="text" name="state" autocomplete="address-level1" required>
+            </label>
+            <label class="field">
+              <span class="field-label">LGA</span>
+              <input type="text" name="lga" autocomplete="address-level2" required>
+            </label>
+            <label class="field">
+              <span class="field-label">Town</span>
+              <input type="text" name="town" autocomplete="address-level3" required>
+            </label>
+            <label class="field field-wide">
+              <span class="field-label">Street</span>
+              <input type="text" name="street" autocomplete="street-address" required>
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" id="address-save" class="btn-primary" disabled>Save address</button>
+            <span id="address-status" class="form-status" hidden></span>
+          </div>
+        </form>
+      </section>
+	  <!-- ── Danger zone ── -->
+	  <section class="card danger-zone">
+	    <details>
+	      <summary>Delete account</summary>
+	      <div class="danger-body">
+	        <p class="muted small">
+	          Your account will be scheduled for deletion and permanently removed in 7 days.
+	          You can restore it any time before then by logging back in.
+	        </p>
+	        <button id="delete-account" class="btn-danger">Delete my account</button>
+	      </div>
+	    </details>
+	  </section>
+    </div>
+    <!-- Delete-account confirmation modal -->
+    <div id="delete-modal" class="modal" hidden>
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="delete-modal-title">
+        <h3 id="delete-modal-title">Delete your account?</h3>
+        <p class="muted small">
+          This schedules your account for permanent deletion in 7 days.
+          You can undo this by logging back in within that window.
+        </p>
+        <form id="delete-form">
+          <label class="field">
+            <span class="field-label">Enter your password to confirm</span>
+            <input type="password" name="password" autocomplete="current-password" required>
+          </label>
+          <p id="delete-error" class="error small" hidden></p>
+          <div class="modal-actions">
+            <button type="button" class="btn-secondary" data-close>Cancel</button>
+            <button type="submit" id="delete-confirm" class="btn-danger">Delete account</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="/static/auth.js"></script>
+  <script src="/static/header.js"></script>
+  <script src="/static/me.js"></script>
+</body>
+</html>

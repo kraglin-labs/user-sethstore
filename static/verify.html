@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify Email — SethStore</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="auth-page">
+  <div class="auth-card">
+    <h1>Check your email</h1>
+    <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:1.25rem;">
+      We sent a 7-digit code to <strong id="email-display" style="color:var(--text)"></strong>
+    </p>
+    <form id="verify-form">
+      <label>Code
+        <input type="text" id="code" inputmode="numeric" pattern="\d{7}" maxlength="7" placeholder="4821937" required>
+      </label>
+      <button type="submit" id="submit-btn">Verify</button>
+    </form>
+    <p id="error" class="error" hidden></p>
+    <p class="link"><a href="/login">Back to login</a></p>
+  </div>
+  <script src="/static/auth.js"></script>
+</body>
+</html>

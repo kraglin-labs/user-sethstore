@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order — SethStore</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="order-page">
+    <a href="/orders" class="back-link">← All orders</a>
+
+    <p id="order-error" class="error" hidden></p>
+    <p id="order-loading" class="muted">Loading…</p>
+
+    <div id="order-body" hidden>
+      <div id="order-banner" class="order-banner" hidden></div>
+
+      <div class="order-head">
+        <h1 id="order-code">Order</h1>
+        <span id="order-status" class="status-pill"></span>
+      </div>
+
+      <section id="order-payment-panel" class="card" hidden></section>
+
+      <section class="card">
+        <h2>Items</h2>
+        <ul id="order-items" class="checkout-items"></ul>
+        <div class="checkout-subtotal">
+          <span>Subtotal</span>
+          <strong id="order-subtotal">₦0.00</strong>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Shipping address</h2>
+        <div id="order-address" class="checkout-address"></div>
+      </section>
+
+      <section class="card">
+        <h2>Timeline</h2>
+        <ul id="order-timeline" class="order-timeline"></ul>
+      </section>
+
+      <section id="order-actions" class="card" hidden>
+        <h2>Actions</h2>
+        <div class="order-actions-row">
+          <button id="mark-paid" class="btn-primary" hidden>I've paid</button>
+          <button id="cancel-order" class="btn-danger" hidden>Cancel order</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="/static/auth.js"></script>
+  <script src="/static/header.js"></script>
+  <script src="/static/order.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orders — SethStore</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="orders-page">
+    <h1 class="orders-title">Your orders</h1>
+
+    <p id="orders-error" class="error" hidden></p>
+    <p id="orders-loading" class="muted">Loading…</p>
+
+    <div id="orders-empty" class="cart-empty" hidden>
+      <p class="muted">You haven't placed any orders yet.</p>
+      <a href="/" class="btn-primary">Start shopping</a>
+    </div>
+
+    <ul id="orders-list" class="orders-list" hidden></ul>
+
+    <div id="orders-more-wrap" class="load-more" hidden>
+      <button id="orders-more" class="btn-secondary">Load more</button>
+    </div>
+  </main>
+
+  <script src="/static/auth.js"></script>
+  <script src="/static/header.js"></script>
+  <script src="/static/orders.js"></script>
+</body>
+</html>

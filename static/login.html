@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In — SethStore</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="auth-page">
+  <div class="auth-card">
+    <h1>Log in</h1>
+    <form id="login-form">
+      <label>Email
+        <input type="email" id="email" autocomplete="email" required>
+      </label>
+      <label>Password
+        <input type="password" id="password" autocomplete="current-password" required>
+      </label>
+      <button type="submit" id="submit-btn">Log in</button>
+    </form>
+    
+    <p id="error" class="error" hidden></p>
+    <p id="message" class="message" hidden></p>
+    <p class="link"><a href="/forgot-password">Forgot password?</a> · <a href="/signup">Create account</a></p>
+  </div>
+  <div id="restore-panel" hidden>
+    <hr style="border:none;border-top:1px solid var(--border);margin:1.25rem 0;">
+    <p class="muted small" style="margin-bottom:.75rem;">
+      This account is scheduled for deletion. Would you like to restore it now?
+    </p>
+    <button type="button" id="restore-btn" class="btn-primary" style="width:100%;">
+      Restore my account
+    </button>
+    <p id="restore-msg" class="message small" hidden style="margin-top:.75rem;"></p>
+    <p id="restore-err" class="error small" hidden style="margin-top:.75rem;"></p>
+  </div>
+  <script src="/static/auth.js"></script>
+  <script src="/static/login.js"></script>
+</body>
+</html>

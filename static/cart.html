@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart — SethStore</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="cart-page">
+    <h1 class="cart-title">Your cart</h1>
+
+    <p id="cart-error" class="error" hidden></p>
+    <p id="cart-loading" class="muted">Loading…</p>
+
+    <div id="cart-empty" class="cart-empty" hidden>
+      <p class="muted">Your cart is empty.</p>
+      <a href="/" class="btn-primary">Continue shopping</a>
+    </div>
+
+    <div id="cart-content" hidden>
+      <div id="cart-warning" class="cart-warning" hidden>
+        Some items in your cart are no longer available. Remove them to continue.
+      </div>
+
+      <ul id="cart-list" class="cart-list"></ul>
+
+      <div class="cart-summary">
+        <div class="cart-summary-row">
+          <span>Subtotal</span>
+          <strong id="cart-subtotal">₦0.00</strong>
+        </div>
+        <p class="muted small">Shipping and taxes calculated at checkout.</p>
+        <button id="checkout-btn" class="btn-primary cart-checkout">Checkout</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="/static/auth.js"></script>
+  <script src="/static/header.js"></script>
+  <script src="/static/cart.js"></script>
+</body>
+</html>
