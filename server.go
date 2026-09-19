@@ -12,7 +12,7 @@ func main() {
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	// Proxy API to backend
-	target, err := url.Parse("http://localhost:8080")
+	target, err := url.Parse("https://backend-sethstore.onrender.com")
 	if err != nil {
 		log.Fatal(err)
 	}
